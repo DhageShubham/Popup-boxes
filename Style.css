@@ -44,8 +44,18 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
   transform: scale(0);
+}
+
+.model-container .backdrop {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .model-container .model {
@@ -57,6 +67,7 @@
   border-radius: 5px;
   text-align: center;
   position: relative;
+  z-index: 1000;
 }
 
 .model-container .model .fa-heart {

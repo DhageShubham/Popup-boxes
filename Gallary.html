@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Gallary.css" />
+    <title>Image Gallary</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <div class="image"><img src="Images/Screenshot (2).png" alt="" /></div>
+        <div class="image"><img src="Images/Screenshot (3).png" alt="" /></div>
+
+        <div class="image"><img src="Images/Screenshot (7).png" alt="" /></div>
+        <div class="image"><img src="Images/Screenshot (8).png" alt="" /></div>
+
+        <div class="image"><img src="Images/Screenshot (11).png" alt="" /></div>
+        <div class="image"><img src="Images/Screenshot (12).png" alt="" /></div>
+      </div>
+      <div class="popup-image">
+        <span>&times;</span>
+        <img src="Images/Screenshot (2).png" alt="" />
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".image-container img").forEach((image) => {
+        image.onclick = () => {
+          document.querySelector(".popup-image").style.display = "block";
+          document.querySelector(".popup-image img").src =
+            image.getAttribute("src");
+        };
+      });
+      document.querySelector(".popup-image span").onclick = () => {
+        document.querySelector(".popup-image").style.display = "none";
+      };
+    </script>
+  </body>
+</html>

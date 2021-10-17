@@ -7,7 +7,7 @@ $(document).ready(function () {
     $(".model-container").css("transform", "scale(0)");
   });
 
-  $(".model-container").click(function () {
+  $(".backdrop").click(function () {
     $(".model-container").css("transform", "scale(0)");
   });
   $("#cancel").click(function () {
