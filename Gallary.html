@@ -10,30 +10,42 @@
   <body>
     <div class="container">
       <div class="image-container">
-        <div class="image"><img src="Images/Screenshot (2).png" alt="" /></div>
-        <div class="image"><img src="Images/Screenshot (3).png" alt="" /></div>
-
-        <div class="image"><img src="Images/Screenshot (7).png" alt="" /></div>
-        <div class="image"><img src="Images/Screenshot (8).png" alt="" /></div>
-
-        <div class="image"><img src="Images/Screenshot (11).png" alt="" /></div>
-        <div class="image"><img src="Images/Screenshot (12).png" alt="" /></div>
+        <div class="image"><img src="Images/1.png" alt="" /></div>
+        <div class="image"><img src="Images/2.png" alt="" /></div>
+        <div class="image"><img src="Images/3.png" alt="" /></div>
       </div>
       <div class="popup-image">
-        <span>&times;</span>
-        <img src="Images/Screenshot (2).png" alt="" />
+        <span class="actions">&times;</span>
+        <span class="actions prev">&lt;</span>
+        <span class="actions next">&gt;</span>
+        <img src="Images/1.png" alt="" />
       </div>
     </div>
     <script>
+      var index = 1;
       document.querySelectorAll(".image-container img").forEach((image) => {
         image.onclick = () => {
           document.querySelector(".popup-image").style.display = "block";
           document.querySelector(".popup-image img").src =
             image.getAttribute("src");
+          index = parseInt(image.getAttribute("src").slice(7, 8));
+          console.log(index);
         };
       });
       document.querySelector(".popup-image span").onclick = () => {
         document.querySelector(".popup-image").style.display = "none";
+      };
+
+      document.querySelector(".prev").onclick = () => {
+        if (--index == 0) index = 3;
+        document.querySelector(".popup-image img").src =
+          "Images/" + index + ".png";
+      };
+
+      document.querySelector(".next").onclick = () => {
+        if (++index == 4) index = 1;
+        document.querySelector(".popup-image img").src =
+          "Images/" + index + ".png";
       };
     </script>
   </body>
